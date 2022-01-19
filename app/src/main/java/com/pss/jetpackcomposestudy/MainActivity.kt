@@ -13,13 +13,12 @@ import com.pss.jetpackcomposestudy.ui.theme.JetpackComposeStudyTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+       /* //아래와 그 아래 setContent 2개 모두 같은 의미
+        setContent(content = {
+            Greeting("Android")
+        })*/
         setContent {
-            JetpackComposeStudyTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
-                }
-            }
+            Greeting("Android")
         }
     }
 }
