@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
             Greeting("Android")
         })*/
         setContent {
-            Greeting("Android")
+            Greeting("student")
         }
     }
 }
@@ -32,6 +32,6 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     JetpackComposeStudyTheme {
-        Greeting("Android")
+        Greeting("student")
     }
 }
