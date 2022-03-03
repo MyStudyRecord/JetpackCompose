@@ -3,6 +3,7 @@ package com.pss.jetpackcomposestudy
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.Text
@@ -30,7 +31,12 @@ fun GreetingText(name: String) {
     Text(
         text = "Hello $name!",
         modifier = Modifier
-            .fillMaxWidth(0.8f)
+            .size(width = 80.dp, height = 100.dp)
+            .clickable(onClick = {
+
+            })
+            .padding(start = 10.dp, bottom = 15.dp)
+
     )
 }
 
