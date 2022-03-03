@@ -9,8 +9,12 @@ import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.pss.jetpackcomposestudy.ui.theme.JetpackComposeStudyTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,11 +36,11 @@ fun GreetingText(name: String) {
         text = "Hello $name!",
         modifier = Modifier
             .size(width = 80.dp, height = 100.dp)
-            .clickable(onClick = {
-
-            })
             .padding(start = 10.dp, bottom = 15.dp)
-
+            .clickable(onClick = { }),
+        style = TextStyle(color = Color.Blue),
+        fontWeight = FontWeight.Bold,
+        fontSize = 18.sp,
     )
 }
 
