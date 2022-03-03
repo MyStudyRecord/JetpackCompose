@@ -3,8 +3,7 @@ package com.pss.jetpackcomposestudy
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
+import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
@@ -18,8 +17,21 @@ class MainActivity : ComponentActivity() {
             Greeting("Android")
         })*/
         setContent {
-            Greeting("student")
+            GreetingButton()
         }
+    }
+}
+
+@Composable
+fun GreetingText(name: String) {
+    Text(text = "Hello $name!")
+}
+
+@Composable
+fun GreetingButton(){
+    Button(onClick = {}) {
+        GreetingText(name = "button")
+        GreetingText(name = "버튼")
     }
 }
 
@@ -27,6 +39,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     JetpackComposeStudyTheme {
-        Greeting("student")
+        GreetingButton()
     }
 }
