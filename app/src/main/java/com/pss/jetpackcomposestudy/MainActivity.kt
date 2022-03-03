@@ -33,13 +33,25 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingText(name: String) {
     Text(
-        text = "Hello $name!",
+        //보여지는 text
+        text = "Hello world!",
+        //modifier로 여러가지 설정
         modifier = Modifier
+                //text 영역 사이즈 설정
             .size(width = 80.dp, height = 100.dp)
+                //클릭 설정
+            .clickable(onClick = { })
+                //padding 설정
             .padding(start = 10.dp, bottom = 15.dp)
-            .clickable(onClick = { }),
-        style = TextStyle(color = Color.Blue),
+         ,
+        //style로 여러가지 설정
+        style = TextStyle(
+            //컬러 설정
+            color = Color.Blue
+        ),
+        //font 굵기 설정
         fontWeight = FontWeight.Bold,
+        //font 사이즈 설정
         fontSize = 18.sp,
     )
 }
