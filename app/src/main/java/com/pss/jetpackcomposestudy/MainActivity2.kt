@@ -4,6 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -28,7 +31,12 @@ fun MainScreen(){
         color = Color.DarkGray,
         modifier = Modifier.fillMaxSize()
         ) {
-        
+        androidx.compose.material.Surface(
+            color = Color.Magenta,
+            modifier = Modifier.wrapContentSize()
+        ) {
+            Text(text = "가즈아 컴포즈", modifier = Modifier.wrapContentSize(), style = MaterialTheme.typography.h3)
+        }
     }
 }
 
