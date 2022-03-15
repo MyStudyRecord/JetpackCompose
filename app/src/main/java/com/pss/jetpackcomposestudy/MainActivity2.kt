@@ -14,6 +14,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.Bottom
+import androidx.compose.ui.Alignment.Companion.CenterHorizontally
+import androidx.compose.ui.Alignment.Companion.Start
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
@@ -30,12 +32,16 @@ class MainActivity2 : ComponentActivity() {
 }
 
 @Composable
-fun MainScreen(){
+fun MainScreen() {
     androidx.compose.material.Surface(
         color = Color.DarkGray,
         modifier = Modifier.fillMaxSize()
+    ) {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
-        Row(modifier = Modifier.fillMaxSize(), horizontalArrangement = SpaceEvenly, verticalAlignment = Bottom) {
             HorizontalColoredBar(Color.Magenta)
             HorizontalColoredBar(Color.Black)
             HorizontalColoredBar(Color.Cyan)
@@ -45,13 +51,13 @@ fun MainScreen(){
 }
 
 @Composable
-fun HorizontalColoredBar(color: Color){
+fun HorizontalColoredBar(color: Color) {
     Surface(
         color = color,
         modifier = Modifier
-            .width(60.dp)
-            .height(600.dp)
-    ){
+            .width(350.dp)
+            .height(100.dp)
+    ) {
 
     }
 }
