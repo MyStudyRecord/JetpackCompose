@@ -5,6 +5,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Arrangement.Absolute.Center
+import androidx.compose.foundation.layout.Arrangement.SpaceAround
+import androidx.compose.foundation.layout.Arrangement.SpaceBetween
+import androidx.compose.foundation.layout.Arrangement.SpaceEvenly
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -32,13 +35,12 @@ fun MainScreen(){
         color = Color.DarkGray,
         modifier = Modifier.fillMaxSize()
         ) {
-        Row(modifier = Modifier.fillMaxSize(), horizontalArrangement = Center, verticalAlignment = Bottom) {
+        Row(modifier = Modifier.fillMaxSize(), horizontalArrangement = SpaceEvenly, verticalAlignment = Bottom) {
             HorizontalColoredBar(Color.Magenta)
             HorizontalColoredBar(Color.Black)
             HorizontalColoredBar(Color.Cyan)
             HorizontalColoredBar(Color.Green)
         }
-
     }
 }
 
