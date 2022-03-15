@@ -36,25 +36,25 @@ fun Greeting(name: String) {
 
 @Composable
 fun MainScreen3() {
+    val greetingListState = remember {
+        mutableStateListOf<String>("Park", "Kim")
+    }
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        GreetingList()
+        GreetingList(greetingListState) { greetingListState.add("Kum") }
     }
 }
 
 @Composable
-fun GreetingList(){
-    val greetingListState = remember {
-        mutableStateListOf<String>("Park","Kim")
-    }
-    for (name in greetingListState) {
+fun GreetingList(namesList: List<String>, buttonClick: () -> Unit) {
+    for (name in namesList) {
         Greeting(name = name)
     }
 
-    Button(onClick = { greetingListState.add("Kum") }) {
+    Button(onClick = buttonClick) {
         Text("Add new name")
     }
 }
