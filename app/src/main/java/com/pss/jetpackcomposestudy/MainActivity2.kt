@@ -3,10 +3,7 @@ package com.pss.jetpackcomposestudy
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -15,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.pss.jetpackcomposestudy.ui.theme.JetpackComposeStudyTheme
 
 class MainActivity2 : ComponentActivity() {
@@ -32,12 +30,25 @@ fun MainScreen(){
         color = Color.DarkGray,
         modifier = Modifier.fillMaxSize()
         ) {
-        androidx.compose.material.Surface(
-            color = Color.Magenta,
-            modifier = Modifier.wrapContentSize(align = Alignment.BottomCenter)
-        ) {
-            Text(text = "가즈아 컴포즈", modifier = Modifier.wrapContentSize(), style = MaterialTheme.typography.h3)
+        Row {
+            HorizontalColoredBar(Color.Magenta)
+            HorizontalColoredBar(Color.Black)
+            HorizontalColoredBar(Color.Cyan)
+            HorizontalColoredBar(Color.Green)
         }
+
+    }
+}
+
+@Composable
+fun HorizontalColoredBar(color: Color){
+    Surface(
+        color = color,
+        modifier = Modifier
+            .width(60.dp)
+            .height(600.dp)
+    ){
+
     }
 }
 
